@@ -1,16 +1,5 @@
-import React, { useState } from "react";
-import "./App.css";
-import { BrowserRouter } from "react-router-dom";
-// import Data from "./component/back/data/Data";
-import Header from "./component/font/Header/header";
-import Route from "./component/font/Route/Rout";
-
-function App() {
-  // const dataItems = Data.products;
-  // handleAdd =(item )=> {
-
-  // }
-  const [cartItem, setCartItem] = useState([
+const Data = {
+  products: [
     {
       id: 1,
       name: "Les Immort",
@@ -55,27 +44,12 @@ function App() {
       image:
         "https://i.pinimg.com/750x/62/32/66/62326694ce4a7b0a59bb5601b9bdb79a.jpg",
     },
-  ]);
 
-  const handelDelete = (elementid) => {
-   console.log(elementid);
 
-   setCartItem((prevState) => {
-    return prevState.filter((element, stateIndex) => stateIndex !== elementid );
-  });
+    
 
-  };
 
-  return (
-    <div className="App">
-      <React.StrictMode>
-        <BrowserRouter>
-          <Header />
-          <Route cartItem={cartItem} handelDelete={handelDelete} />
-        </BrowserRouter>
-      </React.StrictMode>
-    </div>
-  );
-}
+  ],
+};
 
-export default App;
+export default Data;

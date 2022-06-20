@@ -1,0 +1,17 @@
+.card {
+    background-color: #272b36;
+    color: #fff;
+    padding: 0px
+}
+
+.card .card-title {
+    margin: 0px;
+}
+
+.card .card-body button {
+    margin: 10px 0 0 0;
+}
+
+.card .card-body {
+    padding: 22px 7px 0 7px;
+}

@@ -1,0 +1,14 @@
+.navbar-nav {
+    margin: 0 0 0 80%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  margin: 0 0px 0 20px;
+}
+
+.navbar {
+  background-color: #16192a;
+}
+.navbar a {
+  color: #fff;
+}

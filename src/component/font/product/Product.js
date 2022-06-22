@@ -1,8 +1,6 @@
 import React from "react";
 import "./Product.css";
 function Product({ cartItem, handelDelete }) {
-  console.log("productsItems", cartItem);
-
   return (
     <div className="row">
       {cartItem.map((product, index) => (

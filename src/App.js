@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
-// import Data from "./component/back/data/Data";
 import Header from "./component/font/Header/header";
 import Route from "./component/font/Route/Rout";
 import Form from "./component/font/Form/Form";
+
 function App() {
-  // const dataItems = Data.products;
-  // handleAdd =(item )=> {
-
-  // }
-
   const [show, showState] = useState(false);
+  const [Filtter, setFiltter] = useState("");
 
   const [cartItem, setCartItem] = useState([
     {
@@ -78,6 +74,18 @@ function App() {
     showState(!show);
   };
 
+  const FilterName = (name) => {
+    setFiltter(name);
+    console.log(name);
+  };
+
+  const handelFilterName = () => {
+    if (Filtter.length !== 0) {
+      return cartItem.filter((element) => element.name.includes(Filtter));
+    }
+    return cartItem;
+  };
+
   return (
     <div className="App">
       <React.StrictMode>
@@ -88,8 +96,8 @@ function App() {
             handekAddNewUser={handekAddNewUser}
           />
 
-          <Header handelShow={handelShow} />
-          <Route cartItem={cartItem} handelDelete={handelDelete} />
+          <Header handelShow={handelShow} FilterName={FilterName} />
+          <Route cartItem={handelFilterName()} handelDelete={handelDelete} />
         </BrowserRouter>
       </React.StrictMode>
     </div>

@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 // import Data from "./component/back/data/Data";
 import Header from "./component/font/Header/header";
 import Route from "./component/font/Route/Rout";
-
+import Form from "./component/font/Form/Form";
 function App() {
   // const dataItems = Data.products;
   // handleAdd =(item )=> {
 
   // }
+
+  const [show, showState] = useState(false);
+
   const [cartItem, setCartItem] = useState([
     {
       id: 1,
@@ -58,19 +61,34 @@ function App() {
   ]);
 
   const handelDelete = (elementid) => {
-   console.log(elementid);
+    console.log(elementid);
 
-   setCartItem((prevState) => {
-    return prevState.filter((element, stateIndex) => stateIndex !== elementid );
-  });
+    setCartItem((prevState) => {
+      return prevState.filter(
+        (element, stateIndex) => stateIndex !== elementid
+      );
+    });
+  };
 
+  const handekAddNewUser = (dataOfElemet) => {
+    setCartItem((old) => [...old, dataOfElemet]);
+  };
+
+  const handelShow = () => {
+    showState(!show);
   };
 
   return (
     <div className="App">
       <React.StrictMode>
         <BrowserRouter>
-          <Header />
+          <Form
+            show={show}
+            handelShow={handelShow}
+            handekAddNewUser={handekAddNewUser}
+          />
+
+          <Header handelShow={handelShow} />
           <Route cartItem={cartItem} handelDelete={handelDelete} />
         </BrowserRouter>
       </React.StrictMode>

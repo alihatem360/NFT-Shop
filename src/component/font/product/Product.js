@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Product.css";
 function Product({ cartItem, handelDelete }) {
   console.log("productsItems", cartItem);

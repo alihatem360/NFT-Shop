@@ -1,0 +1,36 @@
+.background_Layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 121;
+    background-color: #000;
+    opacity: 0.7;
+  }
+  
+  .Layout_of_Form {
+    position: absolute;
+    background: #fff;
+    width: 50%;
+    padding: 35px 21px;
+    z-index: 232324;
+    transform: translate(50%, 10%);
+    border-radius: 17px;;
+  }
+  
+  .cancelbtn {
+    position: absolute;
+    top: 5%;
+    left: 71%;
+    z-index: 3232323;
+  }
+  
+  .Form-Control {
+    position: absolute;
+  
+    z-index: 2323223;
+    transform: translate(50%, 10%);
+    border-radius: 17px;
+  }
+  

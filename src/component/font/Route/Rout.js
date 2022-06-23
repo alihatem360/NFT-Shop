@@ -22,6 +22,7 @@ function Rout({ cartItem , handelDelete}) {
         <Route exact path="/cart/:id">
           <Cart productsItems={cartItem} />
         </Route>
+        
       </Switch>
     </React.Fragment>
   );

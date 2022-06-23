@@ -1,6 +1,8 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { RiAddFill } from "react-icons/ri";
+
 import Filter from "../Filter/Filter";
 function header({ handelShow, FilterName }) {
   return (
@@ -12,7 +14,7 @@ function header({ handelShow, FilterName }) {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <button className="btn btn-primary mx-3" onClick={handelShow}>
-            ADD new
+            <RiAddFill /> Add new
           </button>
 
           <div className="navbar-nav">

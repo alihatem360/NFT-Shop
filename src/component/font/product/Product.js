@@ -1,4 +1,7 @@
 import React from "react";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { RiEditBoxLine } from "react-icons/ri";
+
 import "./Product.css";
 function Product({ cartItem, handelDelete }) {
   return (
@@ -12,17 +15,27 @@ function Product({ cartItem, handelDelete }) {
               alt={product.name}
             />
             <div className="card-body">
-              <span className="card-title">{product.name}</span>
+            <span className="card-title">{product.name}</span>
+            <p>{product.price}$</p>
 
               <button
                 type="button"
-                class="btn btn-danger float-right"
+                class="btn btn-danger float-right w-100"
                 onClick={(e) => handelDelete(index)}
               >
-                <i class="fas fa-trash-alt"></i>
+              <RiDeleteBin6Line />
+     
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning float-right w-100"
+                onClick={(e) => handelDelete(index)}
+              >
+              <RiEditBoxLine />
+     
               </button>
 
-              <p>{product.price}$</p>
+             
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-import { RiAddFill } from "react-icons/ri";
+import { RiAddFill , RiAdminLine ,  RiUserLine} from "react-icons/ri";
 
 import Filter from "../Filter/Filter";
-function header({ handelShow, FilterName }) {
+function header({ handelShow, FilterName , UpdateAdminState , isAdmin}) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg ">
@@ -13,9 +13,16 @@ function header({ handelShow, FilterName }) {
         </a>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <button className="btn btn-primary mx-3" onClick={handelShow}>
-            <RiAddFill /> Add new
+
+          <button className= {isAdmin ? "btn btn-danger mx-3  text-light" : "btn btn-primary mx-3" } onClick={UpdateAdminState}>
+            { isAdmin ?  `Admin ` : "User " }
+            { isAdmin ?  <RiAdminLine/>  :  <RiUserLine/>  }
           </button>
+          
+       {  isAdmin && 
+         <button className="btn btn-primary mx-3" onClick={handelShow}>
+            <RiAddFill />Add new
+          </button>}
 
           <div className="navbar-nav">
             <Filter FilterName={FilterName} />

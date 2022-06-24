@@ -3,26 +3,32 @@ import { Switch, Route } from "react-router-dom";
 import Product from "../product/Product";
 import Cart from "../Cart/cart";
 import SignUp from "../SignUp/SignUp";
-function Rout({ cartItem , handelDelete}) {
+function Rout({ cartItem, handelDelete, isAdmin ,handelEdit  , handelAddToCart , cart}) {
   return (
     <React.Fragment>
       <Switch>
         <Route path="/" exact>
-          <Product cartItem={cartItem}  handelDelete={handelDelete}/>
+          <Product
+            cartItem={cartItem}
+            handelDelete={handelDelete}
+            isAdmin={isAdmin}
+            handelEdit={handelEdit}
+            handelAddToCart ={handelAddToCart}
+          />
+
         </Route>
 
-        <Route exact  path="/cart">
-          <Cart productsItems={cartItem}  handelDelete={handelDelete} />
+        <Route exact path="/cart">
+          <Cart productsItems={cartItem} handelDelete={handelDelete} />
         </Route>
 
-        <Route exact  path="/signup">
+        <Route exact path="/signup">
           <SignUp productsItems={cartItem} />
         </Route>
 
         <Route exact path="/cart/:id">
-          <Cart productsItems={cartItem} />
+          <Cart productsItems={cartItem} cart={cart}/>
         </Route>
-        
       </Switch>
     </React.Fragment>
   );

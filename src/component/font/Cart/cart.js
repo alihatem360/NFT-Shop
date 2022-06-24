@@ -1,16 +1,15 @@
-
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./cart.css";
 
-function Cart({ }) {
+const Cart = ({ cart }) => {
 
+  console.log({cart});
 
-  let { id } = useParams();
+  // let { id } = useParams();
   return (
     <React.Fragment>
       Hello Cart
-   
       <table class="table">
         <thead>
           <tr>
@@ -23,16 +22,12 @@ function Cart({ }) {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">{id}</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
+
+       
         </tbody>
       </table>
     </React.Fragment>
   );
-}
+};
 
 export default Cart;

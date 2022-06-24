@@ -8,7 +8,6 @@ const Filter = ({ FilterName }) => {
     FilterName(filterValue);
 
   };
-
   return (
     <div>
       <div style={{ marginTop: "5px" }}>

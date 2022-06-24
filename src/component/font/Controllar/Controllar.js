@@ -1,17 +1,13 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
 
-const Controllar = ({ handekAddNewUser }) => {
-  const [inputeEle, setInputValue] = useState(
-   
-
-    {
-      id: "",
-      name: "",
-      price: "",
-      image: "",
-    }
-  );
+const Controllar = ({ handekAddNewUser , itemData , cartItem }) => {
+  const [inputeEle, setInputValue] = useState({
+    id: "",
+    name: "",
+    price: "",
+    image: "",
+  });
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -24,12 +20,13 @@ const Controllar = ({ handekAddNewUser }) => {
     });
 
     setInputValue({
-        id: "",
-        name: "",
-        price: "",
-        image: "",
+      id: "",
+      name: "",
+      price: "",
+      image: "",
     });
   };
+
 
   const handelInputForm = (inputeEle) => {
     const Key = inputeEle.target.id;
@@ -43,10 +40,7 @@ const Controllar = ({ handekAddNewUser }) => {
   return (
     <Fragment>
       <form onSubmit={submitHandler}>
-        <div className="mb-3">
-          <label for="name" className="form-label">
-            Name
-          </label>
+        <div className="my-4">
           <input
             type="text"
             className="form-control"
@@ -58,9 +52,6 @@ const Controllar = ({ handekAddNewUser }) => {
         </div>
 
         <div className="mb-3">
-          <label for="price" className="form-label">
-            Price
-          </label>
           <input
             type="number"
             className="form-control"
@@ -71,10 +62,7 @@ const Controllar = ({ handekAddNewUser }) => {
           />
         </div>
 
-        <div className="mb-3">
-          <label for="image" className="form-label">
-            Image
-          </label>
+        <div className="my-4">
           <input
             type="text"
             className="form-control"
@@ -85,11 +73,19 @@ const Controllar = ({ handekAddNewUser }) => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary mx-5" >
+        <button type="submit" className="btn btn-primary mx-3">
           Submit
         </button>
 
-        <button type="reset" className="btn btn-warning">
+        <button
+          type="reset"
+          className="btn btn-warning"
+          onClick={() =>
+            setInputValue(() => {
+              return { id: "", name: "", price: "", image: "" };
+            })
+          }
+        >
           reset
         </button>
       </form>

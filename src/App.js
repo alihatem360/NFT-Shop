@@ -11,7 +11,8 @@ function App() {
   const [show, showState] = useState(false);
   const [Filtter, setFiltter] = useState("");
   const [isAdmin, setAdmin] = useState(false);
-  const [cart, setCart] = useState([
+  const [cart, setCart] = useState([]);
+  const [cartItem, setCartItem] = useState([
     {
       "id": 1,
       "name": "Les Immort",
@@ -50,9 +51,7 @@ function App() {
       "price": 123,
       "image": "https://i.pinimg.com/750x/62/32/66/62326694ce4a7b0a59bb5601b9bdb79a.jpg"
     }
-  ]
-  );
-  const [cartItem, setCartItem] = useState([]);
+  ]);
 
   useEffect(() => {
     document.title = `Hi ${TilteName}`;

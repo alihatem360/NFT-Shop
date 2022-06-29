@@ -7,7 +7,7 @@ function Rout({ cartItem, handelDelete, isAdmin ,handelEdit  , handelAddToCart ,
   return (
     <React.Fragment>
       <Switch>
-        <Route path="/NFT-Shop" exact>
+        <Route path="/NFT-Shop/" exact>
           <Product
             cartItem={cartItem}
             handelDelete={handelDelete}

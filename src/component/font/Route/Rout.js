@@ -17,8 +17,18 @@ function Rout({ cartItem, handelDelete, isAdmin ,handelEdit  , handelAddToCart ,
           />
 
         </Route>
-        
+
         <Route path="/" exact>
+          <Product
+            cartItem={cartItem}
+            handelDelete={handelDelete}
+            isAdmin={isAdmin}
+            handelEdit={handelEdit}
+            handelAddToCart ={handelAddToCart}
+          />
+
+        </Route>
+        <Route path="/App" exact>
           <Product
             cartItem={cartItem}
             handelDelete={handelDelete}

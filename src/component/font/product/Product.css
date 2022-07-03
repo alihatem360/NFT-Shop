@@ -16,5 +16,9 @@
   padding: 12px 13px;
 }
 .card-img-top {
-  height: 529px;
+  height: 447px;
+}
+
+.row{
+  margin: 0px;
 }

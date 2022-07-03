@@ -6,13 +6,13 @@ import Route from "./component/font/Route/Rout";
 import Form from "./component/font/Form/Form";
 
 function App() {
-
   const [TilteName, setTitel] = useState("lol");
   const [show, showState] = useState(false);
   const [Filtter, setFiltter] = useState("");
   const [isAdmin, setAdmin] = useState(false);
-  const [cart, setCart] = useState([]);
+  const [addingcart, setAddingCart] = useState([]);
   const [cartItem, setCartItem] = useState([]);
+  const [editElement, setEditElement] = useState([]);
 
   useEffect(() => {
     document.title = `Hi ${TilteName}`;
@@ -63,7 +63,6 @@ function App() {
 
   const FilterName = (name) => {
     setFiltter(name);
-    console.log(name);
   };
 
   const handelFilterName = () => {
@@ -72,18 +71,15 @@ function App() {
     }
     return cartItem;
   };
-
+  ///////////// handelEdit
   const handelEdit = (element) => {
-    showState(!show);
-    const itemData = cartItem.filter((item) => item.id === element + 1);
-    console.log(itemData);
+    setEditElement([element]);
+    // console.log(editElement);
   };
   const handelAddToCart = (element) => {
-    const itemData = cartItem.filter((item) => item.id === element);
-    setCart((old) => [...old, itemData]);
-
-   
+    setAddingCart((old) => [...old, element]);
   };
+
   return (
     <div className="App">
       <React.StrictMode>
@@ -99,6 +95,7 @@ function App() {
             FilterName={FilterName}
             UpdateAdminState={UpdateAdminState}
             isAdmin={isAdmin}
+            addingcart={addingcart}
           />
           <Route
             cartItem={handelFilterName()}
@@ -106,7 +103,9 @@ function App() {
             isAdmin={isAdmin}
             handelEdit={handelEdit}
             handelAddToCart={handelAddToCart}
-            cart ={cart}
+            cart={addingcart}
+            addingcart={addingcart}
+            editElement ={editElement}
           />
         </BrowserRouter>
       </React.StrictMode>

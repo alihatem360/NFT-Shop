@@ -1,4 +1,3 @@
-
 .navbar {
   background-color: #16192a;
 }
@@ -6,6 +5,19 @@
   color: #fff;
 }
 
-.navbar  .navbar-collapse{
+.navbar .navbar-collapse {
   margin: 0px 0px 0px 32%;
+}
+
+.nav-link span {
+  padding: 4px 4px;
+  font-size: 15px;
+  margin: 0px 7px;
+  font-weight: 700;
+  color: #2b293f;
+}
+
+.navbar .navbar-collapse{
+  margin: 0 0 0 0;
+
 }

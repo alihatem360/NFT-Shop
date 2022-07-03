@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { RiAddFill , RiAdminLine ,  RiUserLine} from "react-icons/ri";
 
 import Filter from "../Filter/Filter";
-function header({ handelShow, FilterName , UpdateAdminState , isAdmin}) {
+function header({ handelShow, FilterName , UpdateAdminState , isAdmin , addingcart}) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg ">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
+        <Link className="navbar-brand" to="#">
+          NFT 
+        </Link>
 
         <div className="collapse navbar-collapse" id="navbarNav">
 
@@ -21,7 +21,7 @@ function header({ handelShow, FilterName , UpdateAdminState , isAdmin}) {
           
        {  isAdmin && 
          <button className="btn btn-primary mx-3" onClick={handelShow}>
-            <RiAddFill />Add new
+            <RiAddFill /> Add new
           </button>}
 
           <div className="navbar-nav">
@@ -38,9 +38,12 @@ function header({ handelShow, FilterName , UpdateAdminState , isAdmin}) {
                 SignUP
               </Link>
             </li>
+
+            
             <li className="nav-item ">
               <Link className="nav-link" to="/cart">
                 <i class="fas fa-cart-plus"></i>
+                <span className="btn btn-warning ">{addingcart.length}</span>
               </Link>
             </li>
           </div>

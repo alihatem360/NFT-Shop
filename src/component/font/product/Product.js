@@ -1,6 +1,8 @@
 import React from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { RiEditBoxLine } from "react-icons/ri";
+import { useCart } from "react-use-cart";
+import { Link } from "react-router-dom";
 
 import "./Product.css";
 function Product({ cartItem, handelDelete, isAdmin, handelEdit , handelAddToCart }) {
@@ -23,7 +25,7 @@ function Product({ cartItem, handelDelete, isAdmin, handelEdit , handelAddToCart
                 <button
                   type="button"
                   class="btn btn-primary float-right w-100"
-                  onClick={(e) => handelAddToCart(index)}
+                  onClick={()=>handelAddToCart(product)}
                 >
                   <RiEditBoxLine style={{ fontSize: "25px" }} /> Add to cart
                 </button>
@@ -41,9 +43,10 @@ function Product({ cartItem, handelDelete, isAdmin, handelEdit , handelAddToCart
                   <button
                     type="button"
                     class="btn btn-warning float-right w-100"
-                    onClick={(e) => handelEdit(index)}
+                    onClick={()=>handelEdit(product)}
                   >
-                    <RiEditBoxLine style={{ fontSize: "25px" }} /> Edite
+                  <Link to={`/product/${product.id}`}>   <RiEditBoxLine style={{ fontSize: "25px" }} /> Edite  </Link>  
+
                   </button>
                 </>
               )}

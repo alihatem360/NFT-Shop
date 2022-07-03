@@ -1,28 +1,41 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-import { RiAddFill , RiAdminLine ,  RiUserLine} from "react-icons/ri";
+import { RiAddFill, RiAdminLine, RiUserLine } from "react-icons/ri";
 
 import Filter from "../Filter/Filter";
-function header({ handelShow, FilterName , UpdateAdminState , isAdmin , addingcart}) {
+function header({
+  handelShow,
+  FilterName,
+  UpdateAdminState,
+  isAdmin,
+  addingcart,
+}) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg ">
         <Link className="navbar-brand" to="#">
-          NFT 
+          NFT
         </Link>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-
-          <button className= {isAdmin ? "btn btn-danger mx-3  text-light" : "btn btn-primary mx-3" } onClick={UpdateAdminState}>
-            { isAdmin ?  `Admin ` : "User " }
-            { isAdmin ?  <RiAdminLine/>  :  <RiUserLine/>  }
+          <button
+            className={
+              isAdmin
+                ? "btn btn-danger mx-3  text-light"
+                : "btn btn-primary mx-3"
+            }
+            onClick={UpdateAdminState}
+          >
+            {isAdmin ? `Admin ` : "User "}
+            {isAdmin ? <RiAdminLine /> : <RiUserLine />}
           </button>
-          
-       {  isAdmin && 
-         <button className="btn btn-primary mx-3" onClick={handelShow}>
-            <RiAddFill /> Add new
-          </button>}
+
+          {isAdmin && (
+            <button className="btn btn-primary mx-3" onClick={handelShow}>
+              <RiAddFill /> Add new
+            </button>
+          )}
 
           <div className="navbar-nav">
             <Filter FilterName={FilterName} />
@@ -39,7 +52,6 @@ function header({ handelShow, FilterName , UpdateAdminState , isAdmin , addingca
               </Link>
             </li>
 
-            
             <li className="nav-item ">
               <Link className="nav-link" to="/cart">
                 <i class="fas fa-cart-plus"></i>

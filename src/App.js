@@ -38,7 +38,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch("https://alihatem360.github.io/Database_API/NFT_API.json")
+    fetch("http://localhost:3005/NFT")
       .then((response) => response.json())
       .then(setCartItem);
   }, []);

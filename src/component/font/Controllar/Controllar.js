@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
 
-const Controllar = ({ handekAddNewUser , itemData , cartItem }) => {
+const Controllar = ({ handekAddNewUser  }) => {
   
   const [inputeEle, setInputValue] = useState({
     id: "",

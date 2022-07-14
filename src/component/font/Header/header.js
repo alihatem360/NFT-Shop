@@ -46,12 +46,14 @@ function header({
               </Link>
             </li>
 
-            <li className="nav-item ">
-              <Link className="nav-link" to="/signup">
-                SignUP
-              </Link>
-            </li>
+         {
+             // <li className="nav-item ">
+            //   <Link className="nav-link" to="/signup">
+            //     SignUP
+            //   </Link>
+            // </li>
 
+         }
             <li className="nav-item ">
               <Link className="nav-link" to="/cart">
                 <i class="fas fa-cart-plus"></i>

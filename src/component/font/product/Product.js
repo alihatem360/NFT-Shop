@@ -1,11 +1,17 @@
 import React from "react";
-import { RiDeleteBin6Line } from "react-icons/ri";
+import { RiDeleteBin6Line, RiHeart3Fill } from "react-icons/ri";
 import { RiEditBoxLine } from "react-icons/ri";
 import { useCart } from "react-use-cart";
 import { Link } from "react-router-dom";
 
 import "./Product.css";
-function Product({ cartItem, handelDelete, isAdmin, handelEdit , handelAddToCart }) {
+function Product({
+  cartItem,
+  handelDelete,
+  isAdmin,
+  handelEdit,
+  handelAddToCart,
+}) {
   return (
     <div className="row">
       {cartItem.map((product, index) => (
@@ -24,10 +30,11 @@ function Product({ cartItem, handelDelete, isAdmin, handelEdit , handelAddToCart
               ) : (
                 <button
                   type="button"
-                  class="btn btn-primary float-right w-100"
-                  onClick={()=>handelAddToCart(product)}
+                  class="btn btn-danger float-right w-100"
+                  onClick={() => handelAddToCart(product)}
                 >
-                  <RiEditBoxLine style={{ fontSize: "25px" }} /> Add to cart
+                  Add To Favourites{" "}
+                  <RiHeart3Fill style={{ fontSize: "25px" }} />
                 </button>
               )}
 
@@ -43,10 +50,12 @@ function Product({ cartItem, handelDelete, isAdmin, handelEdit , handelAddToCart
                   <button
                     type="button"
                     class="btn btn-warning float-right w-100"
-                    onClick={()=>handelEdit(product)}
+                    onClick={() => handelEdit(product)}
                   >
-                  <Link to={`/product/${product.id}`}>   <RiEditBoxLine style={{ fontSize: "25px" }} /> Edite  </Link>  
-
+                    <Link to={`/product/${product.id}`}>
+                      {" "}
+                      <RiEditBoxLine style={{ fontSize: "25px" }} /> Edite{" "}
+                    </Link>
                   </button>
                 </>
               )}

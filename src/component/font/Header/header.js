@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-import { RiAddFill, RiAdminLine, RiUserLine } from "react-icons/ri";
+import { RiAddFill, RiAdminLine, RiUserLine , RiHeartsFill} from "react-icons/ri";
 
 import Filter from "../Filter/Filter";
 function header({
@@ -56,7 +56,7 @@ function header({
          }
             <li className="nav-item ">
               <Link className="nav-link" to="/cart">
-                <i class="fas fa-cart-plus"></i>
+                <RiHeartsFill />
                 <span className="btn btn-warning ">{addingcart.length}</span>
               </Link>
             </li>

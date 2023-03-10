@@ -22,11 +22,13 @@ The NFT-Shop application uses the following technologies:
 
 ## Deployment
 
-The backend of the NFT-Shop application is deployed on Render.com, and the frontend is deployed on Surge. You can access the application at the following URL: http://nftstor.surge.sh/
+The backend of the NFT-Shop application is deployed on Render.com, and the frontend is deployed on Surge. You can access the application at the following
+
+#### URL: http://nftstor.surge.sh/ 🪁
 
 ## Preview
 
-To preview the output of the NFT-Shop application, you can watch the following video: [NFT-Shop Preview](https://www.youtube.com/watch?v=Fu4gvovv2Pk)
+To preview the output of the NFT-Shop application, you can watch the following video: [NFT-Shop Preview](https://www.youtube.com/watch?v=Fu4gvovv2Pk) 🎥
 
 ## Getting started
 

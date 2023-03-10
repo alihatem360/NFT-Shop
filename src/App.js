@@ -4,9 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "./component/font/Header/header";
 import Route from "./component/font/Route/Rout";
 import Form from "./component/font/Form/Form";
-
+import axios from "axios";
 function App() {
-  const [TilteName, setTitel] = useState("lol");
   const [show, showState] = useState(false);
   const [Filtter, setFiltter] = useState("");
   const [isAdmin, setAdmin] = useState(false);
@@ -14,47 +13,22 @@ function App() {
   const [cartItem, setCartItem] = useState([]);
   const [editElement, setEditElement] = useState([]);
 
-  useEffect(() => {
-    document.title = `Hi ${TilteName}`;
-  }, [TilteName]);
-
-  // const reducer = (state, action) => {
-  //   switch (action.massage) {
-  //     case "👋":
-  //       return { massage: "Hi Ali 👋" };
-  //     case "👊":
-  //       return { massage: "Good bay ali 👊" };
-  //     default:
-  //       return state;
-  //   }
-  // };
-
-  // const [stateMassage, dispatchMassage] = useReducer(reducer, {
-  //   massage: "Hello",
-  // });
-
   const UpdateAdminState = () => {
     setAdmin(!isAdmin);
   };
 
   useEffect(() => {
-    fetch("http://localhost:3005/NFT")
+    fetch("https://testappi.onrender.com/NFT")
       .then((response) => response.json())
       .then(setCartItem);
   }, []);
 
   const handelDelete = (elementid) => {
-    console.log(elementid);
-
-    setCartItem((prevState) => {
-      return prevState.filter(
-        (element, stateIndex) => stateIndex !== elementid
-      );
-    });
-  };
-
-  const handekAddNewUser = (dataOfElemet) => {
-    setCartItem((old) => [...old, dataOfElemet]);
+    // delete from json server by axios
+    axios.delete(`https://testappi.onrender.com/NFT/${elementid}`);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   };
 
   const handelShow = () => {
@@ -71,11 +45,13 @@ function App() {
     }
     return cartItem;
   };
+
   ///////////// handelEdit
   const handelEdit = (element) => {
     setEditElement([element]);
     // console.log(editElement);
   };
+
   const handelAddToCart = (element) => {
     setAddingCart((old) => [...old, element]);
   };
@@ -84,12 +60,7 @@ function App() {
     <div className="App">
       <React.StrictMode>
         <BrowserRouter>
-          <Form
-            show={show}
-            handelShow={handelShow}
-            handekAddNewUser={handekAddNewUser}
-            cartItem={cartItem}
-          />
+          <Form show={show} handelShow={handelShow} cartItem={cartItem} />
           <Header
             handelShow={handelShow}
             FilterName={FilterName}
@@ -105,7 +76,7 @@ function App() {
             handelAddToCart={handelAddToCart}
             cart={addingcart}
             addingcart={addingcart}
-            editElement ={editElement}
+            editElement={editElement}
           />
         </BrowserRouter>
       </React.StrictMode>

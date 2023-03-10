@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
-
-const Controllar = ({ handekAddNewUser  }) => {
-  
+import axios from "axios";
+//  defualt value of input
+const Controllar = () => {
   const [inputeEle, setInputValue] = useState({
     id: "",
     name: "",
@@ -12,8 +12,8 @@ const Controllar = ({ handekAddNewUser  }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-
-    handekAddNewUser({
+    // add new user to json server using axios
+    axios.post("https://testappi.onrender.com/NFT", {
       id: Math.round(Math.random() * 100),
       name: inputeEle.name,
       price: inputeEle.price,
@@ -28,11 +28,10 @@ const Controllar = ({ handekAddNewUser  }) => {
     });
   };
 
-
+  //  handel change input
   const handelInputForm = (inputeEle) => {
     const Key = inputeEle.target.id;
     const value = inputeEle.target.value;
-
     setInputValue((prevState) => {
       return { ...prevState, [Key]: value };
     });

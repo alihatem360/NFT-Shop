@@ -1,7 +1,12 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-import { RiAddFill, RiAdminLine, RiUserLine , RiHeartsFill} from "react-icons/ri";
+import {
+  RiAddFill,
+  RiAdminLine,
+  RiUserLine,
+  RiHeartsFill,
+} from "react-icons/ri";
 
 import Filter from "../Filter/Filter";
 function header({
@@ -46,14 +51,6 @@ function header({
               </Link>
             </li>
 
-         {
-             // <li className="nav-item ">
-            //   <Link className="nav-link" to="/signup">
-            //     SignUP
-            //   </Link>
-            // </li>
-
-         }
             <li className="nav-item ">
               <Link className="nav-link" to="/cart">
                 <RiHeartsFill />

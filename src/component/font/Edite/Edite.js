@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Edite.css";
 export default function Edite({ editElement }) {
-
   const [inputeEle, setInputValue] = useState({
     id: editElement[0].id,
     name: editElement[0].name,
@@ -21,7 +20,13 @@ export default function Edite({ editElement }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put("http://localhost:3005/NFT/" + editElement[0].id, inputeEle);
+    axios.put(
+      "https://testappi.onrender.com/NFT/" + editElement[0].id,
+      inputeEle
+    );
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 1000);
   };
 
   console.log(inputeEle);

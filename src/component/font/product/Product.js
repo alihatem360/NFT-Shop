@@ -43,7 +43,7 @@ function Product({
                   <button
                     type="button"
                     class="btn btn-danger float-right w-100"
-                    onClick={(e) => handelDelete(index)}
+                    onClick={(e) => handelDelete(product.id)}
                   >
                     <RiDeleteBin6Line style={{ fontSize: "25px" }} /> Delete
                   </button>

@@ -4,9 +4,7 @@ const Filter = ({ FilterName }) => {
   const [filterele, setFilter] = useState("");
   const handelFilter = (element) => {
     const filterValue = element.target.value;
-    setFilter(filterValue);
     FilterName(filterValue);
-
   };
   return (
     <div>
